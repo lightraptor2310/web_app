@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block head %} 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/b695317bbe.js" crossorigin="anonymous"></script>
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/socket.io.js" ></script>
+  <script src="../static/js/chart.min.js"></script>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;700&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <!-- <h1>Đây là trang web flask</h1> -->
+    <!-- <p>topic {{topic}}</p> -->
+    <!-- <p>nội dung {{payload}}</p> -->
+    <!-- <h1><span id="data"></span></h1> -->
+  <div class="container wrap-content">
+    <div class="row">
+      <div class="col greeting-card">
+        <div class="card border-0">
+          <div class="card-body">
+            <p class="font-weight-light" style="margin-bottom:0;">Hello, <b class="font-weight-bold">Lộc</b></p>
+            <p class="font-weight-light">Your device under your control.</p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col temperature-card">
+        <div class="card border-0 mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h2 class="card-title font-weight-bold">Nhiệt độ</h2>
+            <div class="display-data-wrap row">
+              <div class="col-2 icon-wrap"><i class="fa-solid fa-temperature-three-quarters icon-data"></i></div>
+              <div class="col data-wrap"><p class="data-content font-weight-bold"><span id="temp">33</span>°C</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col humidity-card">
+        <div class="card border-0 mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h2 class="card-title font-weight-bold">Độ Ẩm</h2>
+            <div class="display-data-wrap row">
+              <div class="col-2 icon-wrap"><i class="fa-solid fa-droplet icon-data"></i></div>
+              <div class="col data-wrap"><p class="data-content font-weight-bold"><span id="hum">00</span>%</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container wrap-chart">
+    <div class="row">
+      <div class="chartSession col" >
+        <canvas id="chart-temperature"></canvas>
+      </div>
+      <div class="chartSession col">
+        <canvas id="chart-humidity"></canvas>
+      </div>
+    </div>
+  </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+{% endblock %}
+
+
+
